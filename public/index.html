@@ -4,9 +4,9 @@
   <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!---<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">--->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <style>
     #progress {
       margin-top: -1%
@@ -38,10 +38,10 @@
       <img src="none.jpg" id="albumArt" width="18%" height=auto>
     </div>
     <div style="margin-left: 20%;margin-top: -15%; font-size: relitive;">
-      <h3 id="header">Current Song:</h3><br>
-      <h3 id="songTitle">Title: NONE</h3><br>
+      <!--<h3 id="header">Promt</h3><br> -->
+      <h7 id="songTitle">Your listening to NONE</h7><br>
+      <h4 id="songArtist">Artist: NONE</h4><br>
       <h3 id="songAlbum">Album: NONE</h3><br>
-      <h3 id="songArtist">Artist: NONE</h3><br>
     </div><div class="live">
       <img src="live.png" id="live" width="18%" height=auto style="margin-left: 2%;margin-top: 2%;">
     </div>
@@ -59,25 +59,6 @@
         <h5 id="songAlbum2">Album: NONE</h5>
         <h5 id="songArtist2">Artist: NONE</h5><br>
       </div>
-      <div class="three">
-        <h5 id="header3">3rd in Queue:</h5>
-        <h5 id="songTitle3">Title: NONE</h5>
-        <h5 id="songAlbum3">Album: NONE</h5>
-        <h5 id="songArtist3">Artist: NONE</h5><br>
-      </div>
-      <div class="four">
-        <h5 id="header4">4th in Queue:</h5>
-        <h5 id="songTitle4">Title: NONE</h5>
-        <h5 id="songAlbum4">Album: NONE</h5>
-        <h5 id="songArtist4">Artist: NONE</h5><br>
-      </div>
-      <div class="five">
-        <h5 id="header5">5th in Queue:</h5>
-        <h5 id="songTitle5">Title: NONE</h5>
-        <h5 id="songAlbum5">Album: NONE</h5>
-        <h5 id="songArtist5">Artist: NONE</h5><br>
-      </div>
-    </div>
   </div>
 <h1 class="playpause" id="playpause">&#10074;&#10074;</h1>
   <div id="progress">
@@ -95,15 +76,15 @@
     });
     socket.on('songTitle', function(songTitle) {
       console.log(songTitle);
-      $("#songTitle").html("Title: " + songTitle);
+      $("#songTitle").html("You're listening to " + songTitle);
     });
     socket.on('songArtist', function(songArtist) {
       console.log(songArtist);
-      $("#songArtist").html("Artist: " + songArtist);
+      $("#songArtist").html("By " + songArtist);
     });
     socket.on('songAlbum', function(songAlbum) {
       console.log(songAlbum);
-      $("#songAlbum").html("Album: " + songAlbum);
+      $("#songAlbum").html("From the album " + songAlbum);
     });
     socket.on('albumArt', function(albumArt) {
       console.log(albumArt);

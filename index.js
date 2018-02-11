@@ -6,6 +6,9 @@ const arrayfun = require('./arrayfun.js');
 var title;
 server.listen(80);
 
+app.get('/style.css', function(req, res) {
+        res.sendfile(__dirname + '/public/style.css');
+    });
 app.get('/none.jpg', function(req, res) {
   res.sendfile(__dirname + '/public/none.jpg');
 });
@@ -24,7 +27,6 @@ io.on('connection', function(socket) {
   socket.emit('news', {
     hello: 'world'
   });
-
 
   const WebSocket = require('ws');
 
