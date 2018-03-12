@@ -1,4 +1,4 @@
-<html>
+ <html>
 
 <head>
   <title></title>
@@ -28,6 +28,7 @@
       z-index: 10;
       width: 100%;
       height: 100%;
+      display: none;
     }
   </style>
 </head>
@@ -172,9 +173,9 @@
       }
     }
     function flash() {
-          $("#flash").show();
+          $("#flash").css("display", "");
       setTimeout(function () {
-          $("#flash").hide();
+          $("#flash").css("display", "none");
     }, 500);
     }
   </script>
